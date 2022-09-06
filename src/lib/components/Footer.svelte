@@ -15,23 +15,4 @@ footer
     flex-wrap: nowrap
     justify-content: space-between
     padding: 1em
-
-header
-  margin: 0.3rem
-  padding: 0.5rem
-  border:  0.2rem solid black
-  background: aquamarine
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-
-  ul
-    margin: 0
-    list-style-type: none
-    display: flex
-    gap: 1rem
-
-    a
-      text-decoration: none
-      color: inherit
 </style>
