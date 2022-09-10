@@ -1,7 +1,7 @@
 <footer>
   <div class="content">
-    <span>@ 2022-2022</span>
-    <span>Written with <a href="https://kit.svelte.dev/">愛恋</a></span>
+    <span>炎 2022-2022</span>
+    <span>Written with <a href="https://codeberg.org/akemi/noway.moe">愛恋</a></span>
   </div>
 </footer>
 
@@ -14,5 +14,5 @@ footer
     display: flex
     flex-wrap: nowrap
     justify-content: space-between
-    padding: 1em
+    padding: 0.9em
 </style>

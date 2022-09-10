@@ -1,43 +1,50 @@
 <script>
   import BubbleBlurb from '$lib/components/BubbleBlurb.svelte';
+  let rand_digit = a => Math.floor(Math.random() * a);
 
   let discord = "Discord";
 
-  // Generate fake data
-  let rand_digit = a => Math.floor(Math.random() * a);
+  const page_quotes = [
+    "Gazing out he boldly claimed, \"It's quite a site\"",
+    "The qt on Wayland",
+    "298 yen",
+  ];
 
+  const quote = page_quotes[rand_digit(page_quotes.length)];
+
+  // Generate fake address
   let rd = () => rand_digit(10);
   let rc = () => String.fromCharCode(rand_digit(26) + 65);
-
-  const social_insurance_number =
-    `${rd()}${rd()}${rd()}-${rd()}${rd()}${rd()}-${rd()}${rd()}${rd()}`;
-
-  const eye_color = rand_digit(16777216).toString(16);
-  const eye_inverse =
-    (Number(`0x1${eye_color}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase();
 
   const address = rand_digit(10000);
   const postal_code = `${rc()}${rd()}${rc()} ${rd()}${rc()}${rd()}`;
 </script>
 
 <svelte:head>
-  <title>Akemi Izuko ~ Home</title>
+  <title>Home</title>
   <meta name="description" content="Akemi's personal website! OwU" />
 </svelte:head>
 
 <section class="home">
   <center class="bad-joke">
-    Gazing out he boldly claimed, "It's quite a site"
+    { quote }
   </center>
 
   <grid class="bubbles">
     <BubbleBlurb class="bubble" title="About Me!">
-      <p>There's so much to say, how can I possibly fit it into one bubble?</p>
-      <p>Blazing fast 🚀, like rust</p>
-      <p>Uncertified comedian</p>
-      <p>Has a prettier sin number than you ({ social_insurance_number })</p>
       <p>
-        "A mousè? You mean that thing Kuro keeps leaving in the back yard?"
+        Hello! I'm Akemi, CS major and TA for a C programming course. I do a few
+        things online, most of which are linked here. This site is a bit
+        non-linear. Feel free to explore!
+      </p>
+      <p>
+        I'm usually on discord, though email is the best way to get a hold of
+        me
+      </p>
+      <p style="font-size: var(--mini-font-size)">
+        I use Arch btw
+        (um, actually it's <a href="https://endeavouros.com/">EndeavourOS</a>
+        for <a href="https://t2linux.org">t2-enabled macs</a>)
       </p>
     </BubbleBlurb>
 
@@ -61,13 +68,22 @@
           >{ discord }</a>
         </li>
         <li><a href="https://anilist.co/user/akemiko">OnlyFans</a></li>
+        <li><a href="https://open.kattis.com/users/akemi">Kattis</a></li>
         <li>Email: <tt>echo 'YWtlbWlAbm93YXkubW9lCg==' | base64 -d</tt></li>
-        <li>Address: { address } Magika Loop NW, Canada, { postal_code }</li>
+        <li>Address: { address } Magika Loop NW, Wayland, { postal_code }</li>
       </ul>
     </BubbleBlurb>
 
     <BubbleBlurb title="Interests">
-      <p><a>Unix</a>, <a>nVim</a>, <a>Bash</a>, etc... <a>Configs!</a></p>
+      <p>
+        <a href="https://codeberg.org/akemi/dotfiles/src/branch/main/vim"
+          >Vim</a>, <a href="https://codeberg.org/akemi/dotfiles/src/branch/main/bash"
+          >Bash</a>... <a href="https://codeberg.org/akemi/dotfiles.git"
+          >Unix!</a>
+      </p>
+      <p>
+        Non-competitive <a href="https://open.kattis.com/users/akemi">competitive programming</a>
+      </p>
       <p>
         Learning about machines <a href="https://uais.dev/about">learning</a>
       </p>

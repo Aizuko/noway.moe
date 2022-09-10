@@ -10,6 +10,8 @@
 </section>
 
 <style lang="sass">
+  @use 'static/fonts/fonts.sass'
+
   #outer-bubble
     margin: 1em
     //width: 100%
